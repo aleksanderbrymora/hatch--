@@ -1,6 +1,6 @@
-#include <Actuator.h>
 #include <Arduino.h>
-#include <Constants.hpp>
+#include "Actuator.h"
+#include "Constants.hpp"
 
 Actuator::Actuator(int open_pin, int close_pin)
 {

@@ -6,16 +6,16 @@
 #define Hatch_h
 
 #include <Arduino.h>
-#include <Constants.hpp>
-#include <Screen.h>
-#include <Environment.h>
+
+#include "Constants.hpp"
+#include "Screen.h"
+#include "Environment.h"
 
 class Hatch
 {
 public:
   Hatch(Environment *env, Screen *screen);
   void run();
-  void update_signals();
 
 private:
   // State machine methods
@@ -29,6 +29,7 @@ private:
   void check_error();
 
   // keeping state
+  void update_signals();
   State state;
   State prev_state;
   int hatch_error = LOW;

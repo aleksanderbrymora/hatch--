@@ -1,6 +1,7 @@
 #include <Arduino.h>
-#include <Lights.h>
-#include <Constants.hpp>
+
+#include "Lights.h"
+#include "Constants.hpp"
 
 Lights::Lights(int pin)
 {

@@ -2,9 +2,10 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-#include <Screen.h>
-#include <Constants.hpp>
-#include <Environment.h>
+
+#include "Screen.h"
+#include "Constants.hpp"
+#include "Environment.h"
 
 Screen::Screen()
 {

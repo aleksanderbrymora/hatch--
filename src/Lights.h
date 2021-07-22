@@ -4,7 +4,7 @@
 #ifndef Lights_h
 #define Lights_h
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 class Lights
 {

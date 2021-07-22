@@ -1,7 +1,8 @@
 // External Libs
 #include <Arduino.h>
-#include <Hatch.h>
-#include <Environment.h>
+
+#include "Hatch.h"
+#include "Environment.h"
 
 Screen screen;
 Environment environment(&screen);

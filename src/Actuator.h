@@ -4,7 +4,7 @@
 #ifndef Actuator_h
 #define Actuator_h
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 class Actuator
 {
