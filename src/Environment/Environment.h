@@ -10,12 +10,13 @@
 #include <DHT.h>
 
 #include "Constants.hpp"
-#include "Screen.h"
+#include "Screen/Screen.h"
 
 class Environment
 {
 public:
-  Environment(Screen *screen);
+  // Environment(Screen *screen);
+  void init(Screen *screen);
   void update();
   void zero_time();
 

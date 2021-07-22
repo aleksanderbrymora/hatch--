@@ -12,7 +12,7 @@
 class Screen
 {
 public:
-  Screen();
+  void init();
   void display_env(float t, float h);
   void display_state(String status);
 

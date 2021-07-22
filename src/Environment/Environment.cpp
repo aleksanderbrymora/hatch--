@@ -3,9 +3,9 @@
 
 #include "Environment.h"
 #include "Constants.hpp"
-#include "Screen.h"
+#include "Screen/Screen.h"
 
-Environment::Environment(Screen *screen)
+void Environment::init(Screen *screen)
 {
   DHT _dht(Pins::dht, DHT11);
   temperature = 0;

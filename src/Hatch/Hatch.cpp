@@ -2,12 +2,10 @@
 
 // My libs
 #include "Hatch.h"
-#include "Lights.h"
-#include "Actuator.h"
+#include "Lights/Lights.h"
+#include "Actuator/Actuator.h"
 #include "Constants.hpp"
-#include "DebounceBtn.h"
-#include "Environment.h"
-#include "Screen.h"
+#include "DebounceBtn/DebounceBtn.h"
 
 // Initialising my libs
 Lights lights;                                // Lights control
@@ -15,10 +13,12 @@ Actuator actuator;                            // Actuator control
 DebounceBtn open_btn(Pins::open_button);      // Open Button control
 DebounceBtn emergency_btn(Pins::open_button); // Emergency button control
 
-Hatch::Hatch(Environment *env, Screen *screen)
+void Hatch::init(Environment *env, Screen *screen)
 {
   _screen = screen;
   _env = env;
+  state = State::opening;
+  prev_state = state;
 }
 
 void Hatch::closing()

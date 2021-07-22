@@ -8,13 +8,13 @@
 #include <Arduino.h>
 
 #include "Constants.hpp"
-#include "Screen.h"
-#include "Environment.h"
+#include "Screen/Screen.h"
+#include "Environment/Environment.h"
 
 class Hatch
 {
 public:
-  Hatch(Environment *env, Screen *screen);
+  void init(Environment *env, Screen *screen);
   void run();
 
 private:

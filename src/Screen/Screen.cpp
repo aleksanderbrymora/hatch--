@@ -5,11 +5,11 @@
 
 #include "Screen.h"
 #include "Constants.hpp"
-#include "Environment.h"
 
-Screen::Screen()
+void Screen::init()
 {
-  Adafruit_SSD1306 _display(Screen_params::width, Screen_params::height, &Wire, Screen_params::oled_reset);
+  Serial.println("Initialising screen");
+  _display = Adafruit_SSD1306(Screen_params::width, Screen_params::height, &Wire, Screen_params::oled_reset);
   if (!_display.begin(SSD1306_SWITCHCAPVCC, Screen_params::screen_address))
   {
     Serial.println(F("SSD1306 allocation failed"));
@@ -18,6 +18,8 @@ Screen::Screen()
   _display.setCursor(0, 20);
   _display.setTextSize(3);
   _display.setTextColor(WHITE);
+  delay(2000);
+  Serial.println("Screen Initialised");
 }
 
 void Screen::display_env(float t, float h)
@@ -32,18 +34,8 @@ void Screen::display_env(float t, float h)
 
 void Screen::display_state(String state)
 {
+  Serial.println(state);
   _display.clearDisplay();
   _display.print(state);
   _display.display();
 }
-
-// todo add a 10s delay for the env check
-// void signal_state(String state_name)
-// {
-//   // making sure the state is shown for the 10 ish seconds
-//   t_0_env_check = millis();
-//   t_env_check = t_0_env_check;
-//   display.clearDisplay();
-//   display.print(state_name);
-//   display.display();
-// }
